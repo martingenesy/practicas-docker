@@ -4,3 +4,5 @@ COPY package*.json .
 RUN  npm install
 COPY . . 
 ENV API=https://api.v1.miweb.com
+CMD [ "env", "run", "dev"]
+ENTRYPOINT [ "env", "run", "env" ]
