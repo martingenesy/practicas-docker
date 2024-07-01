@@ -4,5 +4,7 @@ COPY package*.json .
 RUN  npm install
 COPY . . 
 ENV API=https://api.v1.miweb.com
+EXPOSE 5173
+RUN addgroup react && adduser -S -G react react
+USER react
 CMD [ "env", "run", "dev"]
-ENTRYPOINT [ "env", "run", "env" ]
